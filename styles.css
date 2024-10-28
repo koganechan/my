@@ -67,4 +67,6 @@ main {
 
 .twitter-button { width: 30px; height: 30px; 
 }
-
+.footer-center {
+    text-align: center;
+}
