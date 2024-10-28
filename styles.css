@@ -64,3 +64,6 @@ main {
 .arc-button:hover {
     background-color: #0d8ddb;
 }
+.twitter-button { width: 100px; height: 100px; 
+}
+
