@@ -3,12 +3,23 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
+    color: #333;
 }
 
-header, footer {
-    background-color: #f8f9fa;
-    padding: 10px;
+header {
+    background-color: #282c34;
+    color: white;
+    padding: 20px;
     text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
 }
 
 nav ul {
@@ -38,7 +49,18 @@ main {
     padding: 20px;
 }
 
-footer {
-    background-color: #333;
+.arc-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #1da1f2;
     color: white;
+    border-radius: 25px; /* ここで円弧を作成 */
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.arc-button:hover {
+    background-color: #0d8ddb;
 }
