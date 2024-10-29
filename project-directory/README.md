@@ -2,7 +2,8 @@
 
 ### ディレクトリ
 
-/my /project-directory index.html about.html contact.html README.md styles.css 
+/my 
+    /project-directory index.html about.html contact.html README.md styles.css 
     /img twitter-button.png 
     /js weather.js index.html styles.css
 
