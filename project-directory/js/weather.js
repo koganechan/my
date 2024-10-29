@@ -1,6 +1,6 @@
-const apiKey = '9778186f903a62a3c1aeb24f60e8af0d';  // 取得したAPIキーをここに貼り付ける
+const apiKey = '6eef4188457178a05a0b7f257e7a7660';
 const city = 'Tokyo';
-const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=ja`;
 
 fetch(url)
     .then(response => {
@@ -15,6 +15,13 @@ fetch(url)
             <h2>${data.name}</h2>
             <p>天気: ${data.weather[0].description}</p>
             <p>温度: ${data.main.temp}°C</p>
+            <p>湿度: ${data.main.humidity}%</p>
+            <p>気圧: ${data.main.pressure} hPa</p>
+            <p>最低/最高気温: ${data.main.temp_min} / ${data.main.temp_max} °C</p>
+            <p>降雨量 (1h): ${data.rain ? data.rain['1h'] : 0} mm</p>
+            <p>風速: ${data.wind.speed} m/s</p>
+            <p>風向: ${data.wind.deg}° (${data.wind.deg})</p>
+            <p>データ取得日時: ${new Date(data.dt * 1000).toLocaleString('ja-JP')}</p>
         `;
     })
     .catch(error => {
