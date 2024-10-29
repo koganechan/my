@@ -1,4 +1,4 @@
-const apiKey = 'Y9778186f903a62a3c1aeb24f60e8af0d ';
+const apiKey = '9778186f903a62a3c1aeb24f60e8af0d';  // 取得したAPIキーをここに貼り付ける
 const city = 'Tokyo';
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -20,6 +20,4 @@ fetch(url)
     .catch(error => {
         console.error('Error fetching weather data:', error);
         document.getElementById('weather').innerHTML = '<p>天気情報を取得できませんでした。</p>';
-    });
-
     });
