@@ -3,7 +3,12 @@ const city = 'Tokyo';
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 fetch(url)
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
     .then(data => {
         const weatherElement = document.getElementById('weather');
         weatherElement.innerHTML = `
@@ -14,4 +19,5 @@ fetch(url)
     })
     .catch(error => {
         console.error('Error fetching weather data:', error);
+        document.getElementById('weather').innerHTML = '<p>天気情報を取得できませんでした。</p>';
     });
