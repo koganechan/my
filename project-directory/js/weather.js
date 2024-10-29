@@ -1,4 +1,4 @@
-const apiKey = '6eef4188457178a05a0b7f257e7a7660';
+const apiKey = '9778186f903a62a3c1aeb24f60e8af0d';
 const city = 'Tokyo';
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=ja`;
 
@@ -20,7 +20,7 @@ fetch(url)
             <p>最低/最高気温: ${data.main.temp_min} / ${data.main.temp_max} °C</p>
             <p>降雨量 (1h): ${data.rain ? data.rain['1h'] : 0} mm</p>
             <p>風速: ${data.wind.speed} m/s</p>
-            <p>風向: ${data.wind.deg}° (${data.wind.deg})</p>
+            <p>風向: ${data.wind.deg}° (方角：${data.wind.deg})</p>
             <p>データ取得日時: ${new Date(data.dt * 1000).toLocaleString('ja-JP')}</p>
         `;
     })
