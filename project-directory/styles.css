@@ -83,6 +83,11 @@ main {
   border: 1px solid #000;
 }
 
+.twitter-button {
+  width: 18px;
+  height: 18px;
+}
+
 .footer-center {
   text-align: center;
   background-color: #282c34;
@@ -100,13 +105,13 @@ main {
   color: inherit; /* 親要素の色を継承 */
   text-decoration: none; /* リンクの下線を取り除くオプション */
 }
-
 @media (max-width: 768px) {
   .twitter-button {
     width: 18px;
     height: 18px;
   }
 }
+
 
 /* もしリンクの他のスタイルを設定したい場合は、ここで調整 */
 .footer-center a:hover,
