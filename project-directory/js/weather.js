@@ -1,4 +1,4 @@
-const apiKey = '9778186f903a62a3c1aeb24f60e8af0d';
+const apiKey = 'YOUR_API_KEY';
 const city = 'Tokyo';
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=ja`;
 
@@ -22,7 +22,7 @@ fetch(url)
             <p>風速: ${data.wind.speed} m/s</p>
             <p>風向: ${data.wind.deg}° (方角：${data.wind.deg})</p>
             <p>データ取得日時: ${new Date(data.dt * 1000).toLocaleString('ja-JP')}</p>
-        `;
+        ;
     })
     .catch(error => {
         console.error('Error fetching weather data:', error);
