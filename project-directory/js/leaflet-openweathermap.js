@@ -6,7 +6,7 @@
 
 L.OWM = L.TileLayer.extend({
 	options: {
-		appId: 'GET_YOUR_OWN_APPID', /* pass your own AppId as parameter when creating the layer. Get your own AppId at https://www.openweathermap.org/appid */
+		appId: '9778186f903a62a3c1aeb24f60e8af0d', /* pass your own AppId as parameter when creating the layer. Get your own AppId at https://www.openweathermap.org/appid */
 		baseUrl: "https://{s}.tile.openweathermap.org/map/{layername}/{z}/{x}/{y}.png",
 		maxZoom: 18,
 		showLegend: true,
