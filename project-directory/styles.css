@@ -20,7 +20,7 @@ h1 {
 footer {
     background-color: #333;
     color: white;
-    text-align: center; /* ここでテキストをセンターに */
+    text-align: center;
 }
 
 nav ul {
@@ -73,4 +73,8 @@ main {
 
 .footer-center {
     text-align: center;
+    background-color: #282c34; /* フッターの背景色 */
+    padding: 10px;
+    border-top: 1px solid #ccc; /* フッターの上部に線を追加 */
+    color: white; /* テキストの色を設定 */
 }
