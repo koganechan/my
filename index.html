@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メインページ</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="js/leaflet.css" />
+    <link rel="stylesheet" href="js/leaflet-openweathermap.css" />
+</head>
+<body>
+    <header>
+        <h1>こがねちゃんのホームページ</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="about.html">アバウト</a></li>
+            <li><a href="contact.html">コンタクト</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>ホーム</h2>
+        
+        <p><B>不思議なんですが天気予報が好きなのかな？</P><P>作ってみました(*'▽')？</B></p>
+        <div class="table-container">
+            <div>
+                <!-- ここに画像リンクを追加 -->
+                <a href="https://x.com/Koganechan1">
+                    <img src="img/chibi200.png" alt="リンク画像">
+                </a>
+            </div>
+            <div>
+                <div id="map"></div>
+                <div id="weather"></div> <!-- 天気情報を表示する要素を追加 -->
+                <script src="js/leaflet.js"></script>
+                <script src="js/leaflet-openweathermap.js"></script>
+                <script src="js/weather.js"></script>
+                <script>
+                    const apiKey = '9778186f903a62a3c1aeb24f60e8af0d'; // 取得したAPIキーをここに貼り付ける
+
+                    // マップの初期化
+                    var map = L.map('map').setView([35.6895, 139.6917], 10); // 東京中心に設定
+
+                    // OSMレイヤーの追加
+                    var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 18,
+                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(map);
+
+                    // OpenWeatherMapレイヤーの追加
+                    var clouds = L.OWM.clouds({appId: apiKey}).addTo(map); // デフォルト追加
+                    var city = L.OWM.current({intervall: 15, lang: 'ja', appId: apiKey}).addTo(map); // デフォルト追加
+
+                    // レイヤーコントロール追加
+                    var baseMaps = { "OSM Standard": osm };
+                    var overlayMaps = { "Clouds": clouds, "Cities": city };
+                    L.control.layers(baseMaps, overlayMaps).addTo(map);
+                </script>
+            </div>
+        </div>
+    </main>
+    <footer class="footer-center">
+        <p>&copy; 2024 こがねちゃんのホームページvr10301305 &nbsp;<a href="https://x.com/Koganechan1" target="_blank"><img src="img/logo-white.png" alt="X（旧Twitter）ボタン" class="twitter-button"></a></p>
+    </footer>
+</body>
+</html>
