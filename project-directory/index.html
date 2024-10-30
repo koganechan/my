@@ -22,7 +22,7 @@
     <main>
         <h2>ホーム</h2>
         
-        <p><B>不思議なんですが天気予報が好きなのかな？</P><P>作ってみました(*'▽')？</B></p>
+        <p><b>(*'▽')？</b></p>
         <div class="table-container">
             <div>
                 <!-- ここに画像リンクを追加 -->
@@ -32,15 +32,16 @@
             </div>
             <div>
                 <div id="map"></div>
-                <div id="weather"></div> <!-- 天気情報を表示する要素を追加 -->
-                <script src="js/leaflet.js"></script>
-                <script src="js/leaflet-openweathermap.js"></script>
-                <script src="js/weather.js"></script>
-                <script>
-                    const apiKey = '9778186f903a62a3c1aeb24f60e8af0d'; // 取得したAPIキーをここに貼り付ける
+                <div id="weather"></div>
 
-                    // マップの初期化
-                    var map = L.map('map').setView([35.6895, 139.6917], 10); // 東京中心に設定
+<script src="js/leaflet.js"></script>
+<script src="js/leaflet-openweathermap.js"></script>
+<script src="js/weather.js"></script>
+<script>
+    // Here you initialize the map, add layers, fetch weather data, etc.
+    const apiKey = '9778186f903a62a3c1aeb24f60e8af0d';
+    var map = L.map('map').setView([35.6895, 139.6917], 10);
+    // ... more initialization code ...
 
                     // OSMレイヤーの追加
                     var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -49,8 +50,8 @@
                     }).addTo(map);
 
                     // OpenWeatherMapレイヤーの追加
-                    var clouds = L.OWM.clouds({appId: apiKey}).addTo(map); // デフォルト追加
-                    var city = L.OWM.current({intervall: 15, lang: 'ja', appId: apiKey}).addTo(map); // デフォルト追加
+                    var clouds = L.OWM.clouds({appId: apiKey}).addTo(map);
+                    var city = L.OWM.current({interval: 15, lang: 'ja', appId: apiKey}).addTo(map);
 
                     // レイヤーコントロール追加
                     var baseMaps = { "OSM Standard": osm };
